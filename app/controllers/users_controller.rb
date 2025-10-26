@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.md { render markdown: @user }
+    end
   end
 
   # GET /users/new
